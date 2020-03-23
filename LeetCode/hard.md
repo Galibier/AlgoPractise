@@ -1,11 +1,11 @@
-### [4] Median of Two Sorted Arrays
+### [[4] Median of Two Sorted Arrays](https://github.com/Galibier/AlgoPractise/blob/master/LeetCode/cpp/4.median-of-two-sorted-arrays.cpp)
 
 问题简述：
 
 `O(log(m+n))`时间复杂度要求下，返回两个数组的中位数。
 
 
-### [10] Regular Expression Matching
+### [10] [Regular Expression Matching](https://github.com/Galibier/AlgoPractise/blob/master/LeetCode/cpp/10.regular-expression-matching.cpp)
 
 问题简述：
 
