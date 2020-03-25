@@ -24,3 +24,8 @@
 问题简述：
 
 链表中每K个元素进行一次翻转。
+
+
+### [30] [Substring with Concatenation of All Words]()
+
+问题简述：
