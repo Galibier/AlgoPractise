@@ -33,7 +33,9 @@ Test set 2: 1 ≤ N ≤ 105.
     Case #3: 0
     ```
     In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.
+
     In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.
+
     In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).
 
 **Note:** Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.
@@ -127,22 +129,28 @@ Test set 2: 1 ≤ K ≤ 105.
     Case #3: 1
     ```
     Sample #1
+
     In Case #1: Tambourine can add up to one session. The added sessions are marked in bold: 100 150 200 230. The difficulty is now 50.
+
     Sample #2
+
     In Case #1: Tambourine can add up to six sessions. The added sessions are marked in bold: 9 10 12 14 16 18 20 23 26 29 30. The difficulty is now 3.
+
     In Case #2: Tambourine can add up to three sessions. The added sessions are marked in bold: 1 2 3 4 5 6 7 8 9 10. The difficulty is now 1. Note that Tambourine only added two sessions.
 
 **Note #1:** Only Sample #1 is a valid input for Test set 1. Consequently, Sample #1 will be used as a sample test set for your submissions.
+
 **Note #2:** Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.
 
 
 ## Bundling (14pts, 21pts)
 
-Pip has N strings. Each string consists only of letters from A to Z. Pip would like to bundle their strings into groups of size K. Each string must belong to exactly one group. The score of a group is equal to the length of the longest prefix shared by all the strings in that group. For example:
-• The group {RAINBOW, RANK, RANDOM, RANK} has a score of 2 (the longest prefix is 'RA').
-• The group {FIRE, FIREBALL, FIREFIGHTER} has a score of 4 (the longest prefix is 'FIRE').
-• The group {ALLOCATION, PLATE, WORKOUT, BUNDLING} has a score of 0 (the longest prefix is '').
-Please help Pip bundle their strings into groups of size K, such that the sum of scores of the groups is maximized.
+Pip has N strings. Each string consists only of letters from A to Z. Pip would like to bundle their strings into groups of size K. Each string must belong to exactly one group.The score of a group is equal to the length of the longest prefix shared by all the strings in that group. For example:
+    - The group {RAINBOW, RANK, RANDOM, RANK} has a score of 2 (the longest prefix is 'RA').
+    - The group {FIRE, FIREBALL, FIREFIGHTER} has a score of 4 (the longest prefix is 'FIRE').
+    - The group {ALLOCATION, PLATE, WORKOUT, BUNDLING} has a score of 0 (the longest prefix is '').
+    Please help Pip bundle their strings into groups of size K, such that the sum of scores of the groups is maximized.
+
 - Input
 The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a line containing the two integers N and K. Then, N lines follow, each containing one of Pip's strings.
 - Output
@@ -191,17 +199,29 @@ Test set 2: The total number of characters in Pip's strings across all test case
     ```
 
     Sample #1
+
     In Case #1, Pip can achieve a total score of 0 by make the groups:
+
     • {KICK, START}, with a score of 0.
+
     In Case #2, Pip can achieve a total score of 10 by make the groups:
+
     • {G, G}, with a score of 1.
+
     • {GO, GO}, with a score of 2.
+
     • {GOO, GOO}, with a score of 3.
+
     • {GOOO, GOOO}, with a score of 4.
+
     Sample #2
+
     In Case #1, Pip can achieve a total score of 6 by make the groups:
+
     • {RAINBOW, RANK, RANDOM}, with a score of 2.
+
     • {FIREBALL, FIREWALL, FIREFIGHTER}, with a score of 4.
 
 **Note #1:** Only Sample #1 is a valid input for Test set 1. Consequently, Sample #1 will be used as a sample test set for your submissions.
+
 **Note #2:** Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.
