@@ -6,10 +6,7 @@
 
 // @lc code=start
 class Solution {
-public:
-    vector<int> findSubstring(string s, vector<string>& words) {
-        
-    }
+ public:
+  vector<int> findSubstring(string s, vector<string>& words) {}
 };
 // @lc code=end
-

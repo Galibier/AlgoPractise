@@ -4,14 +4,10 @@
  * [731] My Calendar II
  */
 class MyCalendarTwo {
-public:
-    MyCalendarTwo() {
-        
-    }
-    
-    bool book(int start, int end) {
-        
-    }
+ public:
+  MyCalendarTwo() {}
+
+  bool book(int start, int end) {}
 };
 
 /**
@@ -19,4 +15,3 @@ public:
  * MyCalendarTwo* obj = new MyCalendarTwo();
  * bool param_1 = obj->book(start,end);
  */
-

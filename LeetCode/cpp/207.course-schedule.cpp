@@ -4,9 +4,6 @@
  * [207] Course Schedule
  */
 class Solution {
-public:
-    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
-        
-    }
+ public:
+  bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {}
 };
-
