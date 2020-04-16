@@ -8,15 +8,16 @@
 class Solution {
  public:
   int totalNQueens(int n) {
+    res = 0;
     vector<string> board(n, string(n, '.'));
     backtrack(board, 0);
-    return res.size();
+    return res;
   }
 
  private:
   void backtrack(vector<string>& board, int row) {
     if (row == board.size()) {
-      res.push_back(board);
+      res++;
       return;
     }
 
@@ -43,6 +44,6 @@ class Solution {
     return true;
   }
 
-  vector<vector<string>> res;
+  int res;
 };
 // @lc code=end

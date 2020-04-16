@@ -17,33 +17,30 @@
  * };
  */
 class Solution {
-public:
-    void recoverTree(TreeNode* root)
-    {
-        inOrder(root);
-        swap(first->val, second->val);
+ public:
+  void recoverTree(TreeNode* root) {
+    inOrder(root);
+    swap(first->val, second->val);
+  }
+
+ private:
+  void inOrder(TreeNode* root) {
+    if (root == nullptr) return;
+    inOrder(root->left);
+
+    if (root->val < prev->val) {
+      if (first == nullptr) {
+        first = prev;
+      }
+      second = root;
     }
+    prev = root;
 
-private:
-    void inOrder(TreeNode* root)
-    {
-        if (root == nullptr)
-            return;
-        inOrder(root->left);
+    inOrder(root->right);
+  }
 
-        if (root->val < prev->val) {
-            if (first == nullptr) {
-                first = prev;
-            }
-            second = root;
-        }
-        prev = root;
-
-        inOrder(root->right);
-    }
-
-    TreeNode* prev = new TreeNode(INT_MIN);
-    TreeNode* first = nullptr;
-    TreeNode* second = nullptr;
+  TreeNode* prev = new TreeNode(INT_MIN);
+  TreeNode* first = nullptr;
+  TreeNode* second = nullptr;
 };
 // @lc code=end
