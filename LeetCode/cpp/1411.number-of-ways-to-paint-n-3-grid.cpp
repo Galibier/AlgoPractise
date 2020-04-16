@@ -11,6 +11,7 @@ class Solution {
     long long dp[n][2], div = 1e9 + 7;
     dp[0][0] = 6;
     dp[0][1] = 6;
+
     for (int i = 1; i < n; ++i) {
       dp[i][0] = ((dp[i - 1][0] * 3) % div + (dp[i - 1][1] * 2) % div) % div;
       dp[i][1] = ((dp[i - 1][0] * 2) % div + (dp[i - 1][1] * 2) % div) % div;
