@@ -10,7 +10,7 @@ class Solution {
   vector<int> findSubstring(string s, vector<string>& words) {
     vector<int> ans;
     int len = s.size(), cnt = words.size();
-    if (len == 0 || cnt == 0) return ans;
+    if (len == 0 or cnt == 0) return ans;
 
     unordered_map<string, int> dict;
     for (auto word : words) dict[word]++;
