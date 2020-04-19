@@ -1,1 +1,1 @@
-## KickStart
+## [KickStart](https://codingcompetitions.withgoogle.com/kickstart/schedule)
