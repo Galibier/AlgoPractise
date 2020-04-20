@@ -1,3 +1,7 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
 class Solution {
  public:
   int numberOfArrays(string s, int k) {
@@ -22,3 +26,13 @@ class Solution {
     return f[n];
   }
 };
+
+int main() {
+  Solution sol = Solution();
+  cout << sol.numberOfArrays("1000", 10000) << endl;
+  cout << sol.numberOfArrays("1000", 10) << endl;
+  cout << sol.numberOfArrays("1317", 2000) << endl;
+  cout << sol.numberOfArrays("2020", 30) << endl;
+  cout << sol.numberOfArrays("1234567890", 90) << endl;
+  return 0;
+}
