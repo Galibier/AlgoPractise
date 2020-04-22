@@ -1,3 +1,8 @@
+#include <cstdlib>
+#include <iostream>
+#include <vector>
+using namespace std;
+
 class Solution {
  public:
   int minStartValue(vector<int>& nums) {
@@ -9,3 +14,8 @@ class Solution {
     return ret > 0 ? ret : 1;
   }
 };
+
+int main() {
+  Solution sol = Solution();
+  return 0;
+}
