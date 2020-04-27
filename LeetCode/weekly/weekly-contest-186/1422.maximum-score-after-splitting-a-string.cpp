@@ -7,20 +7,20 @@ class Solution {
  public:
   int maxScore(string s) {
     int ans = 0;
-    vector<int> chars(s.length() - 1, 0);
+    vector<int> dp(s.length() - 1, 0);
     if (s[0] == '0')
-      chars[0] = 1;
+      dp[0] = 1;
     else
-      chars[0] = 0;
+      dp[0] = 0;
     for (int i = 1; i < s.length(); i++)
-      if (s[i] == '1') chars[0]++;
+      if (s[i] == '1') dp[0]++;
     for (int j = 1; j < s.length() - 1; j++) {
       if (s[j] == '0')
-        chars[j] = chars[j - 1] + 1;
+        dp[j] = dp[j - 1] + 1;
       else
-        chars[j] = chars[j - 1] - 1;
+        dp[j] = dp[j - 1] - 1;
     }
-    for (int k = 0; k < chars.size(); k++) ans = max(ans, chars[k]);
+    for (int k = 0; k < dp.size(); k++) ans = max(ans, dp[k]);
     return ans;
   }
 };
