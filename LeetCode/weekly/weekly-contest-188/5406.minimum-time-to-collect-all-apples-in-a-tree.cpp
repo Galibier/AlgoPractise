@@ -6,19 +6,29 @@ using namespace std;
 class Solution {
  public:
   int minTime(int n, vector<vector<int>>& edges, vector<bool>& hasApple) {
-    int i, res = 0;
-    for (i = edges.size() - 1; i >= 0; i--) {
-      if (hasApple[edges[i][1]] == true) {
-        hasApple[edges[i][0]] = true;
-      }
+    for (auto& entry : edges) {
+      maps[entry[0]].push_back(entry[1]);
     }
-    for (i = 0; i < edges.size(); i++) {
-      if (hasApple[edges[i][1]] == true) {
-        res += 2;
-      }
-    }
-    return res;
+
+    hasAppleHelper(0, hasApple);
+
+    return maps.empty() ? 0 : 2 * (maps.size() - 1);
   }
+
+ private:
+  bool hasAppleHelper(int idx, vector<bool>& hasApple) {
+    bool selfOrChildHasApple = hasApple[idx];
+    for (auto i : maps[idx]) {
+      selfOrChildHasApple = hasAppleHelper(i, hasApple) || selfOrChildHasApple;
+    }
+    if (!selfOrChildHasApple) {
+      maps.erase(idx);
+    }
+    return selfOrChildHasApple;
+  }
+
+ private:
+  unordered_map<int, vector<int>> maps;
 };
 
 int main() {
