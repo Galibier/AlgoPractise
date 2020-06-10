@@ -1,8 +1,9 @@
-/*
- * @lc app=leetcode id=4 lang=cpp
- *
- * [4] Median of Two Sorted Arrays
- */
+#include <iostream>
+#include <limits>
+#include <vector>
+
+using namespace std;
+
 const int MAX_INT = std::numeric_limits<int>::max();
 const int MIN_INT = std::numeric_limits<int>::min();
 
@@ -41,3 +42,11 @@ class Solution {
     return -1;
   }
 };
+
+int main() {
+  Solution sol = Solution();
+  vector<int> num1{1, 3};
+  vector<int> num2{2};
+  cout << sol.findMedianSortedArrays(num1, num2) << endl;
+  return 0;
+}
