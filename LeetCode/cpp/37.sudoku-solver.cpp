@@ -1,59 +1,54 @@
-/*
- * @lc app=leetcode id=37 lang=cpp
- *
- * [37] Sudoku Solver
- */
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
-  bool col[10][10], row[10][10], f[10][10];
-  bool flag = false;
+  bool visitRow[9][9] = {false};
+  bool visitCol[9][9] = {false};
+  bool visitBox[9][9] = {false};
+  int num = 0;
   void solveSudoku(vector<vector<char>>& board) {
-    memset(col, false, sizeof(col));
-    memset(row, false, sizeof(row));
-    memset(f, false, sizeof(f));
     for (int i = 0; i < 9; i++) {
       for (int j = 0; j < 9; j++) {
-        if (board[i][j] == '.') continue;
-        int temp = 3 * (i / 3) + j / 3;
-        int num = board[i][j] - '0';
-        col[j][num] = row[i][num] = f[temp][num] = true;
-      }
-    }
-    dfs(board, 0, 0);
-  }
-
-  void dfs(vector<vector<char>>& board, int i, int j) {
-    if (flag == true) return;
-    if (i >= 9) {
-      flag = true;
-      return;
-    }
-    if (board[i][j] != '.') {
-      if (j < 8)
-        dfs(board, i, j + 1);
-      else
-        dfs(board, i + 1, 0);
-      if (flag) return;
-    }
-
-    else {
-      int temp = 3 * (i / 3) + j / 3;
-      for (int n = 1; n <= 9; n++) {
-        if (!col[j][n] && !row[i][n] && !f[temp][n]) {
-          board[i][j] = n + '0';
-          col[j][n] = row[i][n] = f[temp][n] = true;
-          if (j < 8)
-            dfs(board, i, j + 1);
-          else
-            dfs(board, i + 1, 0);
-          col[j][n] = row[i][n] = f[temp][n] = false;
-          if (flag) return;
+        if (board[i][j] != '.') {
+          visitRow[i][board[i][j] - '1'] = true;
+          visitCol[j][board[i][j] - '1'] = true;
+          visitBox[(i / 3) * 3 + j / 3][board[i][j] - '1'] = true;
         }
       }
-      board[i][j] = '.';
     }
+    backTrack(board, 0, 0);
+  }
+  bool backTrack(vector<vector<char>>& board, int row, int col) {
+    while (board[row][col] != '.') {
+      if (++col >= 9) {
+        col = 0;
+        row++;
+      }
+      if (row >= 9) return true;
+    }
+    for (int i = 0; i < 9; i++) {
+      int boxIndex = (row / 3) * 3 + col / 3;
+      if (visitRow[row][i] || visitCol[col][i] || visitBox[boxIndex][i])
+        continue;
+      board[row][col] = i + '1';
+      visitRow[row][i] = true;
+      visitCol[col][i] = true;
+      visitBox[boxIndex][i] = true;
+      if (backTrack(board, row, col)) {
+        return true;
+      } else {
+        board[row][col] = '.';
+        visitRow[row][i] = false;
+        visitCol[col][i] = false;
+        visitBox[boxIndex][i] = false;
+      }
+    }
+    return false;
   }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  return 0;
+}
