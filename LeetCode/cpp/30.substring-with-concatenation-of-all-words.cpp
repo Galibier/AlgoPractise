@@ -1,16 +1,16 @@
-/*
- * @lc app=leetcode id=30 lang=cpp
- *
- * [30] Substring with Concatenation of All Words
- */
+#include <iostream>
+#include <map>
+#include <string>
+#include <unordered_map>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   vector<int> findSubstring(string s, vector<string>& words) {
     vector<int> ans;
-    int len = s.size(), cnt = words.size();
-    if (len == 0 or cnt == 0) return ans;
+    int len = s.size(), words_cnt = words.size();
+    if (len == 0 or words_cnt == 0) return ans;
 
     unordered_map<string, int> dict;
     for (auto word : words) dict[word]++;
@@ -33,7 +33,7 @@ class Solution {
               left += width;
             }
           }
-          if (count == cnt) {
+          if (count == words_cnt) {
             ans.push_back(left);
             tdict[s.substr(left, width)]--;
             count--;
@@ -49,4 +49,20 @@ class Solution {
     return ans;
   }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  string s = "barfoothefoobarman";
+  vector<string> words = {"foo", "bar"};
+  for (auto num : sol.findSubstring(s, words)) {
+    cout << num << " ";
+  }
+  cout << endl;
+  s = "wordgoodgoodgoodbestword";
+  words = {"word", "good", "best", "word"};
+  for (auto num : sol.findSubstring(s, words)) {
+    cout << num << " ";
+  }
+  cout << endl;
+  return 0;
+}
