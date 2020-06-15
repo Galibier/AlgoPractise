@@ -18,9 +18,9 @@ class Codec {
   }
 
   inline TreeNode *parseSubtree(const string &data, int &ptr) {
-    ++ptr;  // 跳过左括号
+    ++ptr;
     auto subtree = parse(data, ptr);
-    ++ptr;  // 跳过右括号
+    ++ptr;
     return subtree;
   }
 
