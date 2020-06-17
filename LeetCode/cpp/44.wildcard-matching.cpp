@@ -1,10 +1,8 @@
-/*
- * @lc app=leetcode id=44 lang=cpp
- *
- * [44] Wildcard Matching
- */
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   bool isMatch(string s, string p) {
@@ -27,4 +25,13 @@ class Solution {
     return dp[m][n];
   }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  cout << sol.isMatch("aa", "a") << endl;
+  cout << sol.isMatch("aa", "*") << endl;
+  cout << sol.isMatch("cb", "?a") << endl;
+  cout << sol.isMatch("adceb", "a*b") << endl;
+  cout << sol.isMatch("acdcb", "a*c?b") << endl;
+  return 0;
+}

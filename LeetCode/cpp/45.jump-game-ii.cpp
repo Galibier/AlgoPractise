@@ -1,10 +1,7 @@
-/*
- * @lc app=leetcode id=45 lang=cpp
- *
- * [45] Jump Game II
- */
+#include <iostream>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   int jump(vector<int>& nums) {
@@ -22,4 +19,10 @@ class Solution {
     return step;
   }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  vector<int> num{2, 3, 1, 1, 4};
+  cout << sol.jump(num) << endl;
+  return 0;
+}
