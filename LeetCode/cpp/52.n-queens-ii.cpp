@@ -1,10 +1,8 @@
-/*
- * @lc app=leetcode id=52 lang=cpp
- *
- * [52] N-Queens II
- */
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   int totalNQueens(int n) {
@@ -46,4 +44,9 @@ class Solution {
 
   int res;
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  cout << totalNQueens(4) << endl;
+  return 0;
+}

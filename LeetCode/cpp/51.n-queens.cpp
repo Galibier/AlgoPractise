@@ -1,14 +1,10 @@
-/*
- * @lc app=leetcode id=51 lang=cpp
- *
- * [51] N-Queens
- */
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
-  vector<vector<string>> res;
-
   vector<vector<string>> solveNQueens(int n) {
     vector<string> board(n, string(n, '.'));
     backtrack(board, 0);
@@ -44,5 +40,17 @@ class Solution {
     }
     return true;
   }
+
+  vector<vector<string>> res;
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  for (auto strs : sol.solveNQueens(4)) {
+    for (auto str : strs) {
+      cout << str << endl;
+    }
+    cout << endl;
+  }
+  return 0;
+}
