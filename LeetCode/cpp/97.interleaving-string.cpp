@@ -1,10 +1,8 @@
-/*
- * @lc app=leetcode id=97 lang=cpp
- *
- * [97] Interleaving String
- */
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   bool isInterleave(string s1, string s2, string s3) {
@@ -27,4 +25,10 @@ class Solution {
     return dp[len1][len2];
   }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  cout << sol.isInterleave("aabcc", "dbbca", "aadbbcbcac") << endl;
+  cout << sol.isInterleave("aabcc", "dbbca", "aadbbbaccc") << endl;
+  return 0;
+}

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
+#include <unordered_map>
 #include <vector>
+#include <climits>
 using namespace std;
 
 class Solution {
@@ -42,7 +44,7 @@ class Solution {
 
 int main() {
   Solution sol = Solution();
-  cout << sol.minDistance("horse", "ros") << endl;
-  cout << sol.minDistance("intention", "execution") << endl;
+  cout << sol.minWindow("horse", "ros") << endl;
+  cout << sol.minWindow("intention", "execution") << endl;
   return 0;
 }
