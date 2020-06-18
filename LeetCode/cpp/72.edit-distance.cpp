@@ -1,10 +1,8 @@
-/*
- * @lc app=leetcode id=72 lang=cpp
- *
- * [72] Edit Distance
- */
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   int minDistance(string word1, string word2) {
@@ -24,4 +22,10 @@ class Solution {
     return dp[m][n];
   }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  cout << sol.minDistance("horse", "ros") << endl;
+  cout << sol.minDistance("intention", "execution") << endl;
+  return 0;
+}

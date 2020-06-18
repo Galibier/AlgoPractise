@@ -1,10 +1,8 @@
-/*
- * @lc app=leetcode id=76 lang=cpp
- *
- * [76] Minimum Window Substring
- */
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   string minWindow(string s, string t) {
@@ -41,4 +39,10 @@ class Solution {
     return minLen == INT_MAX ? "" : s.substr(start, minLen);
   }
 };
-// @lc code=right
+
+int main() {
+  Solution sol = Solution();
+  cout << sol.minDistance("horse", "ros") << endl;
+  cout << sol.minDistance("intention", "execution") << endl;
+  return 0;
+}
