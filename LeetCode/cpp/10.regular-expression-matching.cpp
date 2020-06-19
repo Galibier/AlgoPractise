@@ -1,10 +1,7 @@
-/*
- * @lc app=leetcode id=10 lang=cpp
- *
- * [10] Regular Expression Matching
- */
+#include <strinng>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   bool isMatch(string s, string p) {
@@ -27,17 +24,9 @@ class Solution {
 
     return dp[m][n];
   }
-
-  bool isMatch(string s, string p) {
-    if (p.empty()) return s.empty();
-
-    if ('*' == p[1])
-      return (isMatch(s, p.substr(2)) || !s.empty() &&
-                                             (s[0] == p[0] || '.' == p[0]) &&
-                                             isMatch(s.substr(1), p));
-    else
-      return !s.empty() && (s[0] == p[0] || '.' == p[0]) &&
-             isMatch(s.substr(1), p.substr(1));
-  }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  return 0;
+}
