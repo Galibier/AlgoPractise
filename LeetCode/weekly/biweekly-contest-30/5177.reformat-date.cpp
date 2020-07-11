@@ -9,16 +9,10 @@ using namespace std;
 class Solution {
  public:
   string reformatDate(string date) {
-    // string mon;
-    // for (int i = 0; isdigit(date[i]); i++) {
-    //   mon += date[i];
-    // }
-    // cout << mon << endl;
     stringstream in(date);
     string day, mon, year, ret;
     in >> day >> mon >> year;
     ret += year + "-";
-    // cout << day << mon << year;
     for (int i = 0; i < month.size(); i++) {
       if (mon == month[i]) {
         if (i < 9) ret += "0";
@@ -31,7 +25,6 @@ class Solution {
     for (int i = 0; isdigit(day[i]); i++) {
       ret += date[i];
     }
-    // cout << ret << endl;
     return ret;
   }
 

@@ -16,13 +16,9 @@ class Solution {
       }
     }
     sort(vec.begin(), vec.end());
-    // for (auto n : vec) {
-    //   cout << n << " ";
-    // }
     int ret = 0;
     for (int i = left - 1; i < right; i++) {
       ret += vec[i];
-    //   cout << vec[i] << endl;
     }
     return ret;
   }
