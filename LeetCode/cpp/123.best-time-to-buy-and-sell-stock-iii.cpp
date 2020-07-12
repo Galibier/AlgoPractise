@@ -1,10 +1,7 @@
-/*
- * @lc app=leetcode id=123 lang=cpp
- *
- * [123] Best Time to Buy and Sell Stock III
- */
+#include <iostream>
+#include <vector>
+using namespace std;
 
-// @lc code=start
 class Solution {
  public:
   int maxProfit(vector<int>& prices) {
@@ -23,4 +20,8 @@ class Solution {
     return dp_ik0[k];
   }
 };
-// @lc code=end
+
+int main() {
+  Solution sol = Solution();
+  return 0;
+}
