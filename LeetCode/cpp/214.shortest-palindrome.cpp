@@ -1,24 +1,41 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
   string shortestPalindrome(string s) {
     int n = s.size();
-    string rev(s);
-    reverse(rev.begin(), rev.end());
-    int j = 0;
-    for (int i = 0; i < n; i++) {
-      if (s.substr(0, n - i) == rev.substr(i)) {
-        return rev.substr(0, i) + s;
+    string rs = s;
+    reverse(rs.begin(), rs.end());
+
+    string st = s + "$" + rs;
+    int n2 = st.size();
+    vector<int> next(n2, 0);
+    for (int i = 1; i < n2; i++) {
+      int t = next[i - 1];
+      while (t > 0 && st[t] != st[i]) {
+        t = next[t - 1];
       }
+      if (st[t] == st[i]) t++;
+      next[i] = t;
     }
-    return "";
+
+    for (auto n : next) {
+      cout << n << " ";
+    }
+    cout << endl;
+    int maxLen = next[n2 - 1];
+    int sy = n - maxLen;
+    string pre = rs.substr(0, sy);
+    return pre + s;
   }
 };
 
 int main() {
   Solution sol;
+  cout << sol.shortestPalindrome("aacecaaa") << endl;
   return 0;
 }
