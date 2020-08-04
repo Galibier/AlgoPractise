@@ -25,7 +25,7 @@ class Solution {
       int temp = zero.front();
       zero.pop();
       for (int j = 0; j < adjacents[temp].size(); j++)
-        if (--degrees[adjacents[temp][j]] == 0) {
+        if (--degrees[adjacents[temp][j]] == 0) {galibier
           zero.push(adjacents[temp][j]);
           num--;
         }
