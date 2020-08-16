@@ -24,7 +24,6 @@ class Solution {
         if (nums[i] + nums[j] + nums[n_size - 2] + nums[n_size - 1] < target)
           continue;
         if (j > i + 1 && nums[j] == nums[j - 1]) continue;
-
         int start = j + 1, end = n_size - 1;
         while (start < end) {
           int sum = nums[i] + nums[j] + nums[start] + nums[end];
