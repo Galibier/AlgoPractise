@@ -1,10 +1,3 @@
-/*
- * @lc app=leetcode id=486 lang=cpp
- *
- * [486] Predict the Winner
- */
-
-// @lc code=start
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -48,4 +41,3 @@ int main() {
   cout << sol.PredictTheWinner(input2) << endl;
   return 0;
 }
-// @lc code=end
