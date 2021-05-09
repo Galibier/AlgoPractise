@@ -1,8 +1,9 @@
-/*
- * @lc app=leetcode id=5 lang=cpp
- *
- * [5] Longest Palindromic Substring
- */
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
 class Solution {
  public:
   string longestPalindrome(string s) {
@@ -28,3 +29,49 @@ class Solution {
     return s.substr(left + 1, right - 1 - left);
   }
 };
+
+class SolutionDp {
+ public:
+  string longestPalindrome(string s) {
+    auto len = s.size();
+    if (len == 1) {
+      return s;
+    }
+    vector<vector<bool>> dp(len, vector<bool>(len, false));
+    for (int i = 0; i < len; i++) {
+      dp[i][i] = true;
+    }
+    int maxLen = 1;
+    int begin = 0;
+    for (int length = 2; length <= len; length++) {
+      for (int i = 0; i < len; i++) {
+        int j = i + length - 1;
+        if (j >= len) {
+          break;
+        }
+        if (s[i] == s[j]) {
+          if (j - i >= 2) {
+            dp[i][j] = dp[i + 1][j - 1];
+          } else {
+            dp[i][j] = true;
+          }
+        } else {
+          dp[i][j] = false;
+        }
+        if (dp[i][j] && length > maxLen) {
+          cout << i << " " << j << " " << length << endl;
+          maxLen = length;
+          begin = i;
+        }
+      }
+    }
+    return s.substr(begin, maxLen);
+  }
+};
+
+int main() {
+  Solution sol1;
+  SolutionDp sol2;
+  sol2.longestPalindrome("bb");
+  return 0;
+}
