@@ -5,13 +5,13 @@ using namespace std;
 class Solution {
  public:
   int maximalRectangle(vector<vector<char>>& matrix) {
-    if (matrix.length == 0) {
+    if (matrix.size() == 0) {
       return 0;
     }
-    vector<vector<char>> width(matrix.size(), vector<int>(matrix.size(), 0));
+    vector<vector<int>> width(matrix.size(), vector<int>(matrix[0].size(), 0));
     int maxArea = 0;
-    for (int row = 0; row < matrix.length; row++) {
-      for (int col = 0; col < matrix[0].length; col++) {
+    for (int row = 0; row < matrix.size(); row++) {
+      for (int col = 0; col < matrix[0].size(); col++) {
         if (matrix[row][col] == '1') {
           if (col == 0) {
             width[row][col] = 1;
@@ -35,6 +35,11 @@ class Solution {
 };
 
 int main() {
+  vector<vector<char>> matrix{{'1', '0', '1', '0', '0'},
+                              {'1', '0', '1', '1', '1'},
+                              {'1', '1', '1', '1', '1'},
+                              {'1', '0', '0', '1', '0'}};
   Solution sol = Solution();
+  cout << sol.maximalRectangle(matrix) << endl;
   return 0;
 }
