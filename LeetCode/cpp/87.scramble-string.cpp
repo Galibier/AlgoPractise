@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -30,6 +31,7 @@ class Solution {
 };
 
 class Solution2 {
+ public:
   bool isScramble(string s1, string s2) {
     if (s1 == s2) return true;
     if (s1.size() != s2.size()) return false;
@@ -61,6 +63,7 @@ class Solution2 {
 };
 
 int main() {
-  Solution sol = Solution();
+  Solution sol;
+  Solution2 sol2;
   return 0;
 }
